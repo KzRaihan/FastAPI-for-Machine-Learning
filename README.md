@@ -1,175 +1,583 @@
-# FastAPI for Machine Learning
+# ⚡ FastAPI for Machine Learning
 
-A practical and structured learning repository for mastering **FastAPI** and its application in **Machine Learning model serving**.
+### The Complete Hands-On Course: From API Fundamentals to ML Model Deployment
 
-This repository covers FastAPI fundamentals, REST APIs, HTTP methods, request validation with Pydantic, Machine Learning API development, Docker containerization, and AWS deployment through hands-on examples and projects.
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge\&logo=python\&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688?style=for-the-badge\&logo=fastapi\&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Pydantic](https://img.shields.io/badge/Pydantic-Latest-E92063?style=for-the-badge\&logo=pydantic\&logoColor=white)](https://docs.pydantic.dev/)
+[![Docker](https://img.shields.io/badge/Docker-Latest-2496ED?style=for-the-badge\&logo=docker\&logoColor=white)](https://www.docker.com/)
+[![AWS](https://img.shields.io/badge/AWS-Cloud-232F3E?style=for-the-badge\&logo=amazon-aws\&logoColor=white)](https://aws.amazon.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
 
----
-
-## 📌 Course Overview
-
-**FastAPI** is a modern, high-performance Python web framework for building APIs.
-
-For Machine Learning engineers, FastAPI provides a practical way to expose trained ML models as APIs so that other applications, websites, mobile applications, or services can send input data and receive predictions.
-
-This course focuses on both:
-
-* **FastAPI fundamentals**
-* **Production-oriented Machine Learning model serving**
+**Build production-oriented APIs for Machine Learning models — from your first FastAPI endpoint to Dockerized and cloud-deployed ML services.**
 
 ---
 
-## 🎯 Learning Objectives
+# 🎯 Learning Objectives
 
-By completing this repository, I aim to learn how to:
+By completing this repository, the main objectives are to understand:
 
-* Understand APIs and REST architecture
-* Understand the role of FastAPI in Machine Learning
-* Build FastAPI applications from scratch
-* Work with HTTP methods
-* Handle path and query parameters
-* Validate API input using Pydantic
-* Build POST, PUT, and DELETE endpoints
-* Serve trained Machine Learning models through APIs
-* Improve API structure and reliability
-* Containerize FastAPI applications with Docker
-* Deploy FastAPI applications using AWS
-* Build an end-to-end ML inference API
-
----
-
-## 🛠️ Technologies
-
-* Python
-* FastAPI
-* Uvicorn
-* Pydantic
-* REST API
-* HTTP / JSON
-* Scikit-learn
-* Pandas
-* NumPy
-* Joblib
-* Pytest
-* Docker
-* Docker Compose
-* AWS
+* What APIs are and how they work
+* REST API architecture
+* HTTP methods and status codes
+* FastAPI architecture and philosophy
+* FastAPI application structure
+* Path and query parameters
+* Request and response handling
+* Pydantic data validation
+* POST, PUT, and DELETE operations
+* Automatic API documentation
+* Serving Machine Learning models through FastAPI
+* Designing ML inference APIs
+* API validation and error handling
+* Testing FastAPI applications
+* Docker fundamentals
+* Dockerizing FastAPI applications
+* Deploying FastAPI applications to AWS
+* Building an end-to-end Machine Learning API
 
 ---
 
-# 📚 Course Agenda
+# 🧠 Curriculum
 
-## 01. Introduction to APIs and FastAPI for Machine Learning
+The curriculum is divided into thirteen progressive modules.
 
-Learn:
+```text
+API Fundamentals
+       ↓
+FastAPI Fundamentals
+       ↓
+HTTP Methods
+       ↓
+Path & Query Parameters
+       ↓
+Pydantic
+       ↓
+POST Requests
+       ↓
+PUT & DELETE
+       ↓
+ML Model Serving
+       ↓
+API Improvement
+       ↓
+Docker for ML
+       ↓
+FastAPI + Docker
+       ↓
+AWS Deployment
+       ↓
+Final FastAPI Project
+```
+
+---
+
+# 🌐 Module 01 — Introduction to APIs and FastAPI for Machine Learning
+
+This module establishes the fundamental concepts required before building FastAPI applications.
+
+### Topics
 
 * What is an API?
-* What is a REST API?
+* Why APIs are required
 * Client-server architecture
+* REST API
 * Request and response
 * JSON
+* HTTP
 * HTTP status codes
-* Why APIs are important in Machine Learning
-* Why FastAPI is useful for ML model deployment
+* API endpoints
+* APIs in Machine Learning
+* Why ML models need APIs
+* FastAPI for Machine Learning
+
+### ML API Concept
+
+```text
+Client
+   │
+   │ Request
+   ▼
+API
+   │
+   ▼
+ML Model
+   │
+   ▼
+Prediction
+   │
+   │ Response
+   ▼
+Client
+```
 
 ---
 
-## 02. FastAPI Philosophy | Setup | Installation | Code Demo
+# ⚡ Module 02 — FastAPI Philosophy | Setup | Installation | Code Demo
 
-Learn:
+This module introduces FastAPI and the development environment.
 
-* FastAPI architecture
+### Topics
+
+* What is FastAPI?
 * FastAPI philosophy
+* FastAPI architecture
+* FastAPI vs traditional web frameworks
 * Installing FastAPI
 * Installing Uvicorn
 * Creating the first FastAPI application
-* Running a development server
+* Running a FastAPI server
+* `uvicorn`
 * Automatic API documentation
 * Swagger UI
 * ReDoc
 
+### First FastAPI Application
+
+```text
+FastAPI Application
+        │
+        ├── Application
+        │
+        ├── Routes
+        │
+        ├── Request
+        │
+        └── Response
+```
+
 ---
 
-## 03. HTTP Methods in FastAPI
+# 🔄 Module 03 — HTTP Methods in FastAPI
 
-Learn and implement:
+This module focuses on the fundamental HTTP operations used when developing APIs.
 
-* `GET`
-* `POST`
-* `PUT`
-* `DELETE`
+### Topics
 
-Understand when each HTTP method is used in an API.
+* GET
+* POST
+* PUT
+* DELETE
+* HTTP request
+* HTTP response
+* Status codes
+* API endpoints
+
+### HTTP Workflow
+
+```text
+GET     → Retrieve data
+POST    → Create data
+PUT     → Update data
+DELETE  → Delete data
+```
 
 ---
 
-## 04. Path & Query Parameters
+# 📍 Module 04 — Path & Query Parameters
 
-Learn:
+This module explains how FastAPI receives parameters from client requests.
+
+### Topics
 
 * Path parameters
 * Query parameters
+* Required parameters
 * Optional parameters
-* Parameter type validation
+* Type conversion
+* Type validation
 * Combining path and query parameters
-* FastAPI automatic validation
 
-Example:
+### Example
 
 ```text
 /items/{item_id}?search=python
 ```
 
+FastAPI automatically validates and converts typed parameters.
+
 ---
 
-## 05. Pydantic Crash Course
+# 🧩 Module 05 — Pydantic Crash Course
 
-Learn:
+Pydantic provides structured data validation and is one of the most important components when building FastAPI applications.
 
+### Topics
+
+* What is Pydantic?
 * Pydantic models
-* Data validation
+* BaseModel
 * Type hints
 * Required fields
 * Optional fields
+* Field validation
 * Nested models
 * Request schemas
 * Response schemas
 
-Pydantic will be used extensively when building Machine Learning APIs.
+### Pydantic Workflow
+
+```text
+Client JSON
+     │
+     ▼
+Pydantic Model
+     │
+     ▼
+Validation
+     │
+ ┌───┴────┐
+ │        │
+Valid   Invalid
+ │        │
+ ▼        ▼
+API     Error
+```
 
 ---
 
-## 06. POST Request in FastAPI
+# 📤 Module 06 — POST Request in FastAPI
 
-Learn:
+This module focuses on receiving structured data from clients.
+
+### Topics
 
 * POST requests
 * Request body
 * JSON payload
 * Pydantic request models
 * Input validation
-* Returning structured responses
+* Structured responses
+* HTTP status codes
+
+### Request Flow
+
+```text
+Client
+  │
+  │ POST + JSON
+  ▼
+FastAPI
+  │
+  ▼
+Pydantic
+  │
+  ▼
+Validation
+  │
+  ▼
+Business Logic
+  │
+  ▼
+Response
+```
 
 ---
 
-## 07. PUT & DELETE in FastAPI
+# 🔧 Module 07 — PUT & DELETE in FastAPI
 
-Learn:
+This module introduces resource modification and deletion.
 
-* Updating resources using `PUT`
-* Deleting resources using `DELETE`
-* Path parameters with PUT/DELETE
+### Topics
+
+* PUT requests
+* Updating resources
+* DELETE requests
+* Deleting resources
+* Path parameters
+* Status codes
 * API response design
 
+### CRUD Concept
+
+```text
+Create  → POST
+Read    → GET
+Update  → PUT
+Delete  → DELETE
+```
+
 ---
 
-# 🤖 08. Serving ML Models with FastAPI
+# 🤖 Module 08 — Serving ML Models with FastAPI
 
-This is the main Machine Learning-focused section of the repository.
+This is the primary Machine Learning-focused module of the course.
 
-Learn how to transform a trained Machine Learning model into an API.
+The goal is to learn how to expose a trained Machine Learning model through a REST API.
 
-### Workflow
+### Topics
+
+* Loading trained ML models
+* Model serialization
+* Joblib
+* Model preprocessing
+* Pydantic prediction schemas
+* Prediction endpoints
+* Input validation
+* ML inference
+* Returning predictions
+* Separating training and inference
+* Testing ML APIs
+
+### ML Model Serving Architecture
+
+```text
+                 ┌─────────────────┐
+                 │     Client      │
+                 └────────┬────────┘
+                          │
+                          │ HTTP Request
+                          ▼
+                 ┌─────────────────┐
+                 │    FastAPI      │
+                 │      API        │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │    Pydantic     │
+                 │    Validation   │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │ Preprocessing   │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │  Trained Model  │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │   Prediction    │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │  JSON Response  │
+                 └─────────────────┘
+```
+
+### Project Structure
+
+```text
+08_Serving_ML_Models/
+
+├── notebooks/
+│   └── model_experimentation.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   ├── train_model.py
+│   ├── predict.py
+│   └── schemas.py
+│
+├── artifacts/
+│
+├── tests/
+│   └── test_prediction.py
+│
+├── main.py
+└── README.md
+```
+
+### Major Project
+
+**Build an ML Prediction API**
+
+The project will demonstrate:
+
+1. Train a Machine Learning model
+2. Evaluate the model
+3. Save the trained model
+4. Load the model inside FastAPI
+5. Create a prediction schema
+6. Receive input from a client
+7. Validate the input
+8. Generate a prediction
+9. Return the prediction as JSON
+10. Test the API
+
+---
+
+# 🚀 Module 09 — Improving the FastAPI API
+
+This module focuses on improving the quality and maintainability of FastAPI applications.
+
+### Topics
+
+* API metadata
+* Response models
+* Error handling
+* HTTP exceptions
+* Status codes
+* Input validation
+* Response validation
+* API documentation
+* Testing
+* Project organization
+* Separation of responsibilities
+
+### Goal
+
+Move from:
+
+```text
+Simple FastAPI Application
+```
+
+to:
+
+```text
+Structured
+     ↓
+Validated
+     ↓
+Tested
+     ↓
+Maintainable
+     ↓
+Production-Oriented API
+```
+
+---
+
+# 🐳 Module 10 — Docker for Machine Learning
+
+This module introduces Docker and containerization concepts.
+
+### Topics
+
+* What is Docker?
+* Why Docker?
+* Containers
+* Images
+* Containers vs Virtual Machines
+* Dockerfile
+* Docker commands
+* `.dockerignore`
+* Installing dependencies inside containers
+* Containerizing Python applications
+* Docker for Machine Learning
+
+### Docker Workflow
+
+```text
+Application
+    │
+    ▼
+Dockerfile
+    │
+    ▼
+Docker Image
+    │
+    ▼
+Docker Container
+    │
+    ▼
+Running Application
+```
+
+---
+
+# 🐳 Module 11 — FastAPI + Docker
+
+This module combines FastAPI and Docker to create a containerized API application.
+
+### Topics
+
+* Creating a Dockerfile
+* FastAPI inside Docker
+* Uvicorn inside Docker
+* Port mapping
+* Docker image creation
+* Docker containers
+* Docker Compose
+* Environment configuration
+* Containerized ML APIs
+
+### Architecture
+
+```text
+                 ┌─────────────────┐
+                 │     Client      │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │ Docker Container│
+                 │                 │
+                 │    FastAPI      │
+                 │       │         │
+                 │       ▼         │
+                 │    ML Model     │
+                 └─────────────────┘
+```
+
+---
+
+# ☁️ Module 12 — How to Deploy a FastAPI API on AWS
+
+This module introduces cloud deployment for FastAPI applications.
+
+### Topics
+
+* Cloud deployment fundamentals
+* AWS basics
+* Preparing FastAPI for production
+* Environment variables
+* Production server
+* Docker-based deployment
+* AWS deployment workflow
+* Application configuration
+* Security considerations
+* Monitoring
+* Troubleshooting
+
+### Deployment Workflow
+
+```text
+Local FastAPI
+      │
+      ▼
+Dockerize
+      │
+      ▼
+Docker Image
+      │
+      ▼
+AWS
+      │
+      ▼
+Cloud Application
+      │
+      ▼
+Public API
+```
+
+---
+
+# 🚀 Module 13 — FastAPI Course Project
+
+The final module combines the concepts learned throughout the course.
+
+### Final Project
+
+Build an end-to-end **Machine Learning Prediction API** using:
+
+* FastAPI
+* Pydantic
+* Machine Learning
+* Model serialization
+* API validation
+* Testing
+* Docker
+* AWS
+
+### Complete Workflow
 
 ```text
 Dataset
@@ -184,223 +592,57 @@ Model Training
 Model Evaluation
    │
    ▼
-Save Model Artifact
+Model Serialization
    │
    ▼
-FastAPI Application
+FastAPI
+   │
+   ▼
+Pydantic Validation
    │
    ▼
 Prediction Endpoint
    │
    ▼
-Client Request
+Docker
    │
    ▼
-ML Prediction
-```
-
-### Example Architecture
-
-```text
-                    ┌──────────────────┐
-                    │   Client / User  │
-                    └────────┬─────────┘
-                             │
-                             │ HTTP Request
-                             ▼
-                    ┌──────────────────┐
-                    │     FastAPI     │
-                    │      API        │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ Pydantic Schema  │
-                    │ Input Validation │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ Preprocessing    │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ Trained ML Model │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │    Prediction    │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │ JSON Response    │
-                    └──────────────────┘
-```
-
-### Module Structure
-
-```text
-08_Serving_ML_Models/
-│
-├── README.md
-├── main.py
-│
-├── notebooks/
-│   └── model_experimentation.ipynb
-│
-├── src/
-│   ├── __init__.py
-│   ├── train_model.py
-│   ├── predict.py
-│   └── schemas.py
-│
-├── artifacts/
-│   └── .gitkeep
-│
-└── tests/
-    └── test_prediction.py
-```
-
-The goal is to eventually build a reusable ML inference API that can accept new input data and return model predictions.
-
----
-
-# 09. Improving the FastAPI API
-
-Learn how to make an API more structured and production-oriented.
-
-Topics include:
-
-* API metadata
-* Response models
-* Error handling
-* HTTP status codes
-* Input validation
-* Project organization
-* API documentation
-* Testing
-* Separation of responsibilities
-
----
-
-# 🐳 10. Docker for Machine Learning
-
-Learn the fundamentals of Docker and why containerization is useful for Machine Learning applications.
-
-Topics:
-
-* What is Docker?
-* Containers vs virtual machines
-* Docker images
-* Docker containers
-* Dockerfile
-* Docker commands
-* `.dockerignore`
-* Containerizing Python applications
-* Containerizing ML applications
-
----
-
-# 🐳 11. FastAPI + Docker
-
-Build and containerize a FastAPI application.
-
-Learn:
-
-* Creating a Dockerfile
-* Installing dependencies inside containers
-* Running Uvicorn inside Docker
-* Port mapping
-* Docker Compose
-* Building Docker images
-* Running FastAPI containers
-
-Example:
-
-```text
-FastAPI Application
-        │
-        ▼
-    Dockerfile
-        │
-        ▼
-   Docker Image
-        │
-        ▼
- Docker Container
-        │
-        ▼
-   FastAPI API
+AWS
+   │
+   ▼
+Production API
 ```
 
 ---
 
-# ☁️ 12. Deploying FastAPI on AWS
+# 🛠️ Technology Stack
 
-Learn the fundamentals of deploying a FastAPI application to AWS.
+The implementation will primarily use:
 
-Topics include:
+* **Python**
+* **FastAPI**
+* **Uvicorn**
+* **Pydantic**
+* **REST API**
+* **HTTP / JSON**
+* **Pandas**
+* **NumPy**
+* **Scikit-learn**
+* **Joblib**
+* **Pytest**
+* **Docker**
+* **Docker Compose**
+* **AWS**
+* **Git & GitHub**
 
-* Cloud deployment concepts
-* Preparing FastAPI for deployment
-* Production server configuration
-* Docker-based deployment
-* AWS infrastructure basics
-* Environment variables
-* Application security considerations
-* Monitoring and troubleshooting
-
----
-
-# 🚀 13. FastAPI Course Project
-
-The final section will combine the concepts learned throughout the course into an end-to-end FastAPI application.
-
-The project will demonstrate:
-
-```text
-Client
-  │
-  ▼
-FastAPI
-  │
-  ├── Request Validation
-  │
-  ├── Business Logic
-  │
-  ├── ML Model
-  │
-  └── Prediction
-  │
-  ▼
-JSON Response
-```
-
-The project may later be extended with:
-
-* Machine Learning model inference
-* Docker
-* Automated testing
-* API documentation
-* Cloud deployment
-* Database integration
-* Authentication
-* Monitoring
+The exact Machine Learning models and supporting libraries may vary between individual projects.
 
 ---
 
-# 📂 Repository Structure
+# 📁 Repository Structure
 
 ```text
 FastAPI-for-Machine-Learning/
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── LICENSE
 │
 ├── 01_Introduction_to_APIs/
 │   ├── README.md
@@ -474,60 +716,59 @@ FastAPI-for-Machine-Learning/
 │   ├── README.md
 │   └── main.py
 │
-└── docs/
-    ├── api_notes.md
-    ├── ml_model_serving.md
-    ├── docker_notes.md
-    └── aws_deployment.md
+├── assets/
+│
+├── notebooks/
+│
+├── docs/
+│   ├── api_notes.md
+│   ├── ml_model_serving.md
+│   ├── docker_notes.md
+│   └── aws_deployment.md
+│
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+# 🚀 How to Run the Application
 
-## 1. Clone the repository
+### 1️⃣ Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/KzRaihan/FastAPI-for-Machine-Learning.git
 ```
 
-## 2. Navigate to the project
+### 2️⃣ Navigate to the Repository
 
 ```bash
 cd FastAPI-for-Machine-Learning
 ```
 
-## 3. Create a virtual environment
+### 3️⃣ Create a Virtual Environment
 
-Using Python:
-
-```bash
-python -m venv venv
-```
-
-### Windows
+Using Conda:
 
 ```bash
-venv\Scripts\activate
+conda create -n FastAPI python=3.11
 ```
 
-### Linux / macOS
+### 4️⃣ Activate the Environment
 
 ```bash
-source venv/bin/activate
+conda activate FastAPI
 ```
 
-## 4. Install dependencies
+### 5️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-# ▶️ Running a FastAPI Application
-
-Navigate to the relevant module.
+### 6️⃣ Run a FastAPI Application
 
 For example:
 
@@ -535,19 +776,17 @@ For example:
 cd 02_FastAPI_Setup
 ```
 
-Run:
+Then:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-The API will normally be available at:
+### 7️⃣ Open the API
 
 ```text
 http://127.0.0.1:8000
 ```
-
-FastAPI automatically provides interactive API documentation.
 
 ### Swagger UI
 
@@ -563,27 +802,9 @@ http://127.0.0.1:8000/redoc
 
 ---
 
-# 🧪 Testing
+# 🐳 Run with Docker
 
-Testing examples are maintained inside the relevant modules.
-
-The ML API tests can be found in:
-
-```text
-08_Serving_ML_Models/tests/
-```
-
-Run tests using:
-
-```bash
-pytest
-```
-
----
-
-# 🐳 Docker
-
-Build a Docker image:
+Build the Docker image:
 
 ```bash
 docker build -t fastapi-ml-api .
@@ -601,36 +822,28 @@ For Docker Compose:
 docker compose up --build
 ```
 
+---
+
+# 📚 References
+
+* [FastAPI Course — YouTube Playlist](https://www.youtube.com/watch?v=WJKsPchji0Q&list=PLKnIA16_RmvZ41tjbKB2ZnwchfniNsMuQ)
+* [FastAPI Official Documentation](https://fastapi.tiangolo.com/)
+* [Pydantic Documentation](https://docs.pydantic.dev/)
+* [Uvicorn Documentation](https://www.uvicorn.org/)
+* [Docker Documentation](https://docs.docker.com/)
+* [Scikit-learn Documentation](https://scikit-learn.org/)
+* [AWS Documentation](https://docs.aws.amazon.com/)
 
 
+---
 
-## 🧑‍💻 Author
+# 👨‍💻 Author
 
 **Md Kamruzzaman**
 
-Computer Science & Engineering
-Machine Learning | Deep Learning | Generative AI
+Computer Science & Engineering Graduate
 
----
+Interested in **AI/ML, Deep Learning, Generative AI, Computer Vision, Agentic AI, and Intelligent AI Systems**.
 
-## Repository Topics
-
-```text
-FastAPI
-Python
-REST-API
-Machine-Learning
-ML-Model-Deployment
-Model-Serving
-Pydantic
-Docker
-AWS
-MLOps
-API-Development
-```
-
----
-
-## 📄 License
-
-This project is intended for educational and learning purposes.
+* GitHub: [@KzRaihan](https://github.com/KzRaihan)
+* LinkedIn: [@kzraihan](https://www.linkedin.com/in/kzraihan/)
