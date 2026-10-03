@@ -58,18 +58,11 @@ def Welcome():
 # ============================================================
 @app.get("/view")
 def view():
+    # call the load_data() function to fetch all patient records
     data = load_data()
 
     return data
 
-
-
-
-@app.get("/view")
-def Welcome():
-    return {
-        "message": "A Fully Functional API to Mange Your Patient Records"
-    }
 
 
 
