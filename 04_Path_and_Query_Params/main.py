@@ -11,7 +11,7 @@
 # ============================================================
 # 1. Import libraries
 # ============================================================
-from fastapi import FastAPI
+from fastapi import FastAPI, Path, HTTPException, Query
 import uvicorn
 import json
 
@@ -62,22 +62,51 @@ def views():
     return data
 
 
-# ============================================================
-# 6. Create a patient Route -> Retrieve Specific records
-# ============================================================
+# ================================================================================
+# 6. Create a patient Route -> Retrieve Specific records by provided patient_id
+# ================================================================================
 @app.get("/patient/{patient_id}")
-def view_patient(patient_id: str):
+def view_patient(patient_id: str = Path(..., description="ID of the Patient in the DB", example="P001")):
     # load the all data
     data = load_data()
 
     # find the specific data based on patient_id
     if patient_id in data:
         return data[patient_id]
+    raise HTTPException(status_code=404, detail="Patient not Found")
 
-    return {
-        "error": "Patient not found"
-    }
 
+
+# ================================================================================
+# 7. Create a sort Route -> Retrieve and sort Specific records 
+# sort_by = required Parameter
+# order = optional parameter
+# ================================================================================
+@app.get("/sort")
+def sort_patients(sort_by: str = Query(..., description="Sort on the basis of height, weight, bmi"), order: str=Query('asc', description="sort in asc or desc order")):
+
+    valid_fields = ["height", "weight", "bmi"]
+
+    # we first handle the error or invalid portion
+    if sort_by not in valid_fields:
+        raise HTTPException(status_code=400, detail=f"Invalid field select from {valid_fields}")
+
+    if order not in ['asc', 'desc']:
+        raise HTTPException(status_code=400, detail="Invalid order select between asc and desc")
+
+    # Now perform the valid portion
+
+    # load the data
+    data = load_data()
+
+    # define the sort order
+    sorted_order = True if order=="desc" else False
+
+    sorted_data = sorted(data.values(), key=lambda x:x.get(sort_by, 0), reverse=sorted_order)
+
+    # return the sorted data
+    return sorted_data
+        
 
 
 # ============================================================
