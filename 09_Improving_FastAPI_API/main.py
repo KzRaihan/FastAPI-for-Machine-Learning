@@ -2,16 +2,14 @@ from fastapi import FastAPI
 
 
 app = FastAPI(
-    title="Improved FastAPI Application",
-    description="Example of a more structured FastAPI application.",
+    title="ML Model Prediction API",
+    description="FastAPI application for serving a Machine Learning model.",
     version="1.0.0"
 )
 
 
 @app.get("/")
 def home():
-
     return {
-        "status": "success",
-        "message": "API is running."
+        "message": "Machine Learning Prediction API is running."
     }
