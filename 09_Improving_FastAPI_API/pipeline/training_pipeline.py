@@ -12,3 +12,5 @@ def run_training_pipeline():
     path = save_model(model)                        
     print(f"Model saved to: {path}")
 
+# if __name__ == "__main__":
+#     run_training_pipeline()
