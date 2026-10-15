@@ -1,5 +1,4 @@
-from src.train_model import download_model
+from pipeline.training_pipeline import run_training_pipeline
 
 if __name__ == "__main__":
-    download_model()
-
+    run_training_pipeline()

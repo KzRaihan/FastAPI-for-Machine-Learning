@@ -11,7 +11,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.metrics import classification_report, accuracy_score
 import pickle
 
-from config.city_tier import tier_1_cities, tier_2_cities
+from src.config.city_tier import tier_1_cities, tier_2_cities
 
 
 # load the data

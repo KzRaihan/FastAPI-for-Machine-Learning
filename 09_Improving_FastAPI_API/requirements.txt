@@ -9,3 +9,8 @@ pytest
 httpx
 streamlit
 requests
+
+# ==========================
+# Local Package
+# ==========================
+-e .
